@@ -9,7 +9,7 @@ body {
 
 /* Barra de Navegação */
 
-nav .cabeçalho {
+nav #backInit {
   display: grid;
   grid-auto-flow: column;
   text-align: center;
@@ -163,7 +163,6 @@ textarea {
   border-radius: 10px;
   border: 1px solid black;
   padding: 0.5rem;
-  height: 33px;
 }
 
 form .form-nome,
@@ -173,7 +172,7 @@ form .form-nome,
   padding-bottom: 8px;
 }
 
-button {
+button.button-enviar {
   text-align: center;
   border-radius: 10px;
   padding: 3px;
@@ -185,7 +184,7 @@ button {
   border-style: none;
 }
 
-button:hover {
+button.button-enviar:hover {
   animation: button 4s infinite;
 }
 
@@ -209,6 +208,7 @@ button:hover {
     transition: all 2s 2s;
   }
 }
+
 /* Footer */
 
 footer .conteudo-footer {
