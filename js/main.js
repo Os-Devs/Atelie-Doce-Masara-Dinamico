@@ -1,3 +1,2 @@
-import datasetMain from '../js/model/datasetMain'
-import datasetOthers from '../js/model/datasetOthers'
-
+import datasetMain from '../js/model/datasetMain.js'
+import datasetOthers from '../js/model/datasetOthers.js'
