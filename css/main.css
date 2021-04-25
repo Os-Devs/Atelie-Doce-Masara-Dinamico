@@ -80,6 +80,28 @@ i {
   padding-right: 12px;
 }
 
+@media all and (max-width: 768px) {
+  .logo img{
+    width: 35%;
+  }
+  .logo h1 {
+    font-size: 20px;
+  }
+}
+
+#menu-do-offcanvas {
+  color: white;
+  font-weight: bold;
+  font-family: none;
+}
+
+.offcanvas-header {
+  background-color: #99531D;
+}
+
+.offcanvas-body {
+  background-color: #E68943;
+}
 
 /* Catalogo */
 
