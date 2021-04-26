@@ -19,7 +19,11 @@ i {
 /* Barra de Navegação*/
 
 #header {
-    padding: 0
+  padding: 0;
+}
+
+#catalogo-slide {
+  margin-top: 4rem;
 }
 
 .navbar {
@@ -44,29 +48,6 @@ i {
 .logo {
   position: relative;
   text-align: center;
-  margin-top: 10rem;
-}
-
-@media all and (max-width: 1024px) {
-  .logo {
-    margin-top: 6rem;
-  }
-}
-@media all and (max-width: 800px) {
-  .logo {
-    margin-top: 2rem;
-  }
-  .logo img{
-    width: 35%;
-  }
-}
-@media all and (max-width: 700px) {
-  .logo {
-    margin-top: 2rem;
-  }
-  .logo img{
-    width: 15%;
-  }
 }
 
 #atelie {
@@ -87,34 +68,37 @@ i {
   .logo h1 {
     font-size: 20px;
   }
-}
 
-#offcanvasRightLabel {
-  color: white;
-}
-
-#menu-do-offcanvas {
-  color: white;
-  font-weight: bold;
-  font-family: none;
-}
-
-.offcanvas-header {
-  background-color: #99531D;
-}
-
-.offcanvas-body {
-  background-color: #E68943;
 }
 
 /* Catalogo */
 
 main .catalogo {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   text-align: center;
   row-gap: 20px;
   column-gap: 20px;
+}
+
+.imagem-principal {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 5rem;
+  padding: 20px;
+}
+
+.imagem-principal h3 {
+  margin-top: 25px;
+}
+
+.imagem-principal img {
+  width: 65%;
+  border-radius: 10px;
+  border: 1px solid black;
+  max-width: 768px;
+  max-height: 768px;
 }
 
 .catalogo h3 {
@@ -128,9 +112,14 @@ main .catalogo {
   transition: transform 1s;
 }
 
+.catalogo img:hover {
+  transform: scale(1.07);
+}
+
 @media all and (max-width: 425px) {
+
   main .catalogo {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .catalogo img {
@@ -148,9 +137,8 @@ main .catalogo {
 
 main .catalogo-descrição {
   margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   text-align: center;
-  grid-column: 1/4;
 }
 
 section .sobre-mim-conteudo {
@@ -158,34 +146,18 @@ section .sobre-mim-conteudo {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   padding: 2rem;
+  background-color: khaki;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  -webkit-mask-image: url(../img/style_1_2.svg);
-  -webkit-mask-position: bottom;
-  -webkit-mask-size: cover;
-  -webkit-mask-repeat: no-repeat;
-  background-image: url(../img/bolo.jpg);
-  background-size: cover;
-  background-position: center;
-
 }
 
-section .sobre-mim-conteudo h2 {
-  color: white;
-  text-shadow: 2px 2px 4px #000000;
-}
-
-section .sobre-mim-conteudo p{
-  margin-top: 10px;
-  font-weight: bold;
-  color: white;
-  text-shadow: 2px 2px 4px #000000;
-  margin-bottom: 60px;
+section .sobre-mim-conteudo p {
+  margin-top: 20px;
 }
 
 div.sobre-mim-imagem img {
   border-radius: 10px;
-  border: 1px solid whitesmoke;
+  border: 1px solid black;
 }
 
 section .sobre-mim-imagem {
@@ -240,14 +212,13 @@ form .form-nome,
   padding-bottom: 8px;
 }
 
-.button-main {
+button.button-main {
   text-align: center;
   border-radius: 10px;
   padding: 3px;
   width: 38px;
   height: 42px;
   color: white;
-  background-color: white;
   font-size: 20px;
   border-style: none;
 }
@@ -259,19 +230,7 @@ footer .conteudo-footer {
   margin-top: 20px;
   display: grid;
   padding: 2rem;
-  /* height: 300px; */
-  background-color: #744325;
-  -webkit-mask-image: url(../img/style_1_1.svg);
-  -webkit-mask-position: top;
-  -webkit-mask-size: cover;
-  -webkit-mask-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
-}
-
-footer .pull-left {
-  margin-bottom: 1rem;
+  background-color: lightblue;
 }
 
 footer .social {
@@ -306,10 +265,7 @@ div .contato {
   color: rgba(52, 175, 35, 1);
 }
 
-.offcanvas-bottom {
-  height: 65vh;
-}
-
-div.social {
-  margin-top: 2rem;
+div.carousel-item img {
+  border-radius: 25px;
+  border: 1px solid black;
 }
