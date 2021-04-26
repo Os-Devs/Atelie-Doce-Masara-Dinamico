@@ -128,10 +128,6 @@ main .catalogo {
   transition: transform 1s;
 }
 
-.catalogo img:hover {
-  transform: scale(1.07);
-}
-
 @media all and (max-width: 425px) {
   main .catalogo {
     grid-template-columns: repeat(1, 1fr);
@@ -249,37 +245,13 @@ form .form-nome,
   border-radius: 10px;
   padding: 3px;
   width: 38px;
-  height: 35px;
-  background-color: black;
+  height: 42px;
   color: white;
+  background-color: white;
   font-size: 20px;
   border-style: none;
 }
 
-.button-main:hover {
-  animation: button 4s infinite;
-}
-
-@keyframes button {
-  0% {
-    background-color: black;
-    left: 0px;
-  }
-
-  50% {
-    background-color: white;
-    color: black;
-    left: 19px;
-    transition: all 2s;
-  }
-
-  100% {
-    background-color: black;
-    color: white;
-    left: 38px;
-    transition: all 2s 2s;
-  }
-}
 /* Footer */
 
 footer .conteudo-footer {
@@ -300,10 +272,6 @@ footer .conteudo-footer {
 
 footer .pull-left {
   margin-bottom: 1rem;
-}
-
-footer .container {
-  /* margin-top: 2rem; */
 }
 
 footer .social {
@@ -336,4 +304,12 @@ div .contato {
 
 .social .fa-whatsapp:hover {
   color: rgba(52, 175, 35, 1);
+}
+
+.offcanvas-bottom {
+  height: 50vh;
+}
+
+div.social {
+  margin-top: 2rem;
 }
