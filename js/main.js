@@ -4,6 +4,7 @@ import datasetOthers from "./model/dadosCatalogos.js";
 const dadosMain = datasetMain;
 const dadosOthers = datasetOthers;
 const catalogoVazio = document.querySelector(".catalogo")
+let listaCarrinho = []
 
 const CatalogoMain = () => {
   for (let i = 0; i < dadosMain.length; i++) {
@@ -13,7 +14,7 @@ const CatalogoMain = () => {
       data-bs-target="#offcanvasBottom${dadosMain[i].id}" aria-controls="offcanvasBottom"/></a>
       <h3>${dadosMain[i].title}</h3>
       <p>${dadosMain[i].description}</p>
-      <button id="irCarrinho" class="btn btn-secondary">Colocar no Carrinho</button>
+      <button id="irCarrinho" class="btn btn-secondary">Adicionar ao carrinho</button>
     </div>
     <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom${dadosMain[i].id}" aria-labelledby="offcanvasBottomLabel">
       <div class="offcanvas-header">
@@ -33,34 +34,77 @@ const CatalogoMain = () => {
 CatalogoMain()
 
 const buttons = document.querySelectorAll('#irCarrinho')
+const carrinho = document.querySelector('#dentroCarrinho')
 
-console.log(buttons)
 
 const ColocarNoCarrinho = () => {
 
-  buttons[0].addEventListener('click', function () {
-  console.log('Colocar bolo customizado no carrinho')
-  });
+  // if (buttons[0] === true) {
+  //   const bolo = `
+  //   <div class="card mb-3" style="max-width: 540px;">
+  //     <div class="row g-0">
+  //       <div class="col-md-4">
+  //         <img class="w-100" src="${dadosMain[0].image}" alt="${dadosMain[0].title}">
+  //       </div>
+  //       <div class="col-md-8">
+  //         <div class="card-body">
+  //           <h5 class="card-title">${dadosMain[0].title}</h5>
+  //           <p class="card-text">${dadosMain[0].description}</p>
+  //           <button id="fechar" class="btn btn-danger">
+  //             Finalizar Compra
+  //           </button>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </div>`
 
-  buttons[1].addEventListener('click', function () {
-    console.log('Colocar tortas no carrinho')
-  });
+  //   carrinho.insertAdjacentHTML('beforeend', bolo)
 
-  buttons[2].addEventListener('click', function () {
-    console.log('Colocar docinhos no carrinho')
-  });
+  //   listaCarrinho.push(dadosMain[0].price)
+  // }
+  
+  
 
-  buttons[3].addEventListener('click', function () {
-    console.log('Colocar cupcakees no carrinho')
-  });
+  for (let i = 0; i < dadosMain.length; i++) {
+    buttons[i].addEventListener('click', function () {
 
-  buttons[4].addEventListener('click', function () {
-    console.log('Colocar pudim no carrinho')
-  });
+      console.log(`Você clicou no ${dadosMain[i].title}`)
 
-  buttons[5].addEventListener('click', function () {
-    console.log('Colocar bolo de aniversário no carrinho')
-  });
+      const bolo = `
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img class="w-100" src="${dadosMain[i].image}" alt="${dadosMain[i].title}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">${dadosMain[i].title}</h5>
+              <p class="card-text">${dadosMain[i].description}</p>
+              <button id="fechar" class="btn btn-danger">
+                Finalizar Compra
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>`
+  
+      carrinho.insertAdjacentHTML('beforeend', bolo)
+  
+      listaCarrinho.push(dadosMain[i].price)
+  
+      teste = listaCarrinho.reduce((addition, value) => addition + value)
+
+      const total = `
+      <button id="total" class="btn btn-danger mb-2 text-center">
+        Total R$ ${teste}
+      </button>`
+
+      carrinho.insertAdjacentHTML('beforeend', total)
+
+    });
+  }
+
+  console.log(listaCarrinho)
 
 }
 
