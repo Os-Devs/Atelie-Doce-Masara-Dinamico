@@ -89,6 +89,10 @@ i {
   }
 }
 
+#offcanvasRightLabel {
+  color: white;
+}
+
 #menu-do-offcanvas {
   color: white;
   font-weight: bold;
