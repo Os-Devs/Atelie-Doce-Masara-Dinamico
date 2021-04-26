@@ -44,7 +44,7 @@ const datasetMain = [
     image: './img/bolo-6.jpeg',
     title: 'Bolos de Aniversário',
     description: 'Peça o seu bolo de aniversário totalmente customizado',
-    image1: './img/catalogo-img/cat6-aniversario1.jpeg',
+    image1: './img/catalogo-img/cat6-aniversario.jpeg',
     image2: './img/catalogo-img/cat6-aniversario2.jpeg',
   },
 ];

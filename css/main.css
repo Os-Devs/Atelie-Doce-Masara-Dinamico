@@ -128,10 +128,6 @@ main .catalogo {
   transition: transform 1s;
 }
 
-/* .catalogo img:hover {
-  transform: scale(1.07);
-} */
-
 @media all and (max-width: 425px) {
   main .catalogo {
     grid-template-columns: repeat(1, 1fr);
@@ -278,10 +274,6 @@ footer .pull-left {
   margin-bottom: 1rem;
 }
 
-footer .container {
-  /* margin-top: 2rem; */
-}
-
 footer .social {
   font-size: 20px;
 }
@@ -316,4 +308,8 @@ div .contato {
 
 .offcanvas-bottom {
   height: 50vh;
+}
+
+div.social {
+  margin-top: 2rem;
 }

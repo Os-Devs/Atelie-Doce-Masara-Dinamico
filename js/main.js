@@ -13,6 +13,7 @@ const CatalogoMain = () => {
       data-bs-target="#offcanvasBottom${dadosMain[i].id}" aria-controls="offcanvasBottom"/></a>
       <h3>${dadosMain[i].title}</h3>
       <p>${dadosMain[i].description}</p>
+      <button id="irCarrinho" class="btn btn-secondary">Colocar no Carrinho</button>
     </div>
     <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom${dadosMain[i].id}" aria-labelledby="offcanvasBottomLabel">
       <div class="offcanvas-header">
@@ -20,8 +21,8 @@ const CatalogoMain = () => {
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body small">
-        <img src="${dadosMain[i].image1}" alt="${dadosMain[i].title}">
-        <img src="${dadosMain[i].image2}" alt="${dadosMain[i].title}">
+        <img class="w-25 h-100" src="${dadosMain[i].image1}" alt="${dadosMain[i].title}">
+        <img class="w-25 h-100" src="${dadosMain[i].image2}" alt="${dadosMain[i].title}">
       </div>
     </div>`
 
@@ -30,3 +31,37 @@ const CatalogoMain = () => {
 };
 
 CatalogoMain()
+
+const buttons = document.querySelectorAll('#irCarrinho')
+
+console.log(buttons)
+
+const ColocarNoCarrinho = () => {
+
+  buttons[0].addEventListener('click', function () {
+  console.log('Colocar bolo customizado no carrinho')
+  });
+
+  buttons[1].addEventListener('click', function () {
+    console.log('Colocar tortas no carrinho')
+  });
+
+  buttons[2].addEventListener('click', function () {
+    console.log('Colocar docinhos no carrinho')
+  });
+
+  buttons[3].addEventListener('click', function () {
+    console.log('Colocar cupcakees no carrinho')
+  });
+
+  buttons[4].addEventListener('click', function () {
+    console.log('Colocar pudim no carrinho')
+  });
+
+  buttons[5].addEventListener('click', function () {
+    console.log('Colocar bolo de aniversário no carrinho')
+  });
+
+}
+
+ColocarNoCarrinho()
