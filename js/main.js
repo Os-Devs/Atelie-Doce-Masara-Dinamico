@@ -4,7 +4,8 @@ import datasetOthers from "./model/dadosCatalogos.js";
 const dadosMain = datasetMain;
 const dadosOthers = datasetOthers;
 const catalogoVazio = document.querySelector(".catalogo")
-let listaCarrinho = []
+let listaPrecos = []
+let listaProdutos = []
 let soma = 0
 
 const CatalogoMain = () => {
@@ -39,10 +40,10 @@ const carrinho = document.querySelector('#dentroCarrinho')
 const totalDiv = document.querySelector('#total')
 
 const ColocarNoCarrinho = () => {
-
+  
   for (let i = 0; i < dadosMain.length; i++) {
     buttons[i].addEventListener('click', function () {
-
+      
       console.log(`Você clicou no ${dadosMain[i].title}`)
 
       const bolo = `
@@ -55,30 +56,29 @@ const ColocarNoCarrinho = () => {
             <div class="card-body">
               <h5 class="card-title">${dadosMain[i].title}</h5>
               <p class="card-text">${dadosMain[i].description}</p>
-              <button id="fechar" class="btn btn-danger">
-                Finalizar Compra
-              </button>
             </div>
           </div>
         </div>
       </div>`
-  
-      carrinho.insertAdjacentHTML('afterbegin', bolo)
-  
-      listaCarrinho.push(dadosMain[i].price)
 
-      soma = listaCarrinho.reduce((addition, value) => addition + value)
+      listaPrecos.push(dadosMain[i].price)
 
+      soma = listaPrecos.reduce((addition, value) => addition + value)
+
+      carrinho.insertAdjacentHTML("afterbegin", bolo)
+    
       const total = `
-      <button id="total" class="btn btn-danger mb-2 text-center">
+      <button id="total" class="btn btn-danger mr-5">
         Total R$ ${soma}
+      </button>
+      <button class="btn btn-success">
+        Finalizar Compra
       </button>`
 
       totalDiv.innerHTML =  total
 
     });
   }
-
 }
 
 ColocarNoCarrinho()
