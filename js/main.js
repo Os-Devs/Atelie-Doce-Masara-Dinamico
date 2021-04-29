@@ -5,6 +5,7 @@ const dadosMain = datasetMain;
 const dadosOthers = datasetOthers;
 const catalogoVazio = document.querySelector(".catalogo")
 let listaCarrinho = []
+let soma = 0
 
 const CatalogoMain = () => {
   for (let i = 0; i < dadosMain.length; i++) {
@@ -35,35 +36,9 @@ CatalogoMain()
 
 const buttons = document.querySelectorAll('#irCarrinho')
 const carrinho = document.querySelector('#dentroCarrinho')
-
+const totalDiv = document.querySelector('#total')
 
 const ColocarNoCarrinho = () => {
-
-  // if (buttons[0] === true) {
-  //   const bolo = `
-  //   <div class="card mb-3" style="max-width: 540px;">
-  //     <div class="row g-0">
-  //       <div class="col-md-4">
-  //         <img class="w-100" src="${dadosMain[0].image}" alt="${dadosMain[0].title}">
-  //       </div>
-  //       <div class="col-md-8">
-  //         <div class="card-body">
-  //           <h5 class="card-title">${dadosMain[0].title}</h5>
-  //           <p class="card-text">${dadosMain[0].description}</p>
-  //           <button id="fechar" class="btn btn-danger">
-  //             Finalizar Compra
-  //           </button>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </div>`
-
-  //   carrinho.insertAdjacentHTML('beforeend', bolo)
-
-  //   listaCarrinho.push(dadosMain[0].price)
-  // }
-  
-  
 
   for (let i = 0; i < dadosMain.length; i++) {
     buttons[i].addEventListener('click', function () {
@@ -88,23 +63,21 @@ const ColocarNoCarrinho = () => {
         </div>
       </div>`
   
-      carrinho.insertAdjacentHTML('beforeend', bolo)
+      carrinho.insertAdjacentHTML('afterbegin', bolo)
   
       listaCarrinho.push(dadosMain[i].price)
-  
-      teste = listaCarrinho.reduce((addition, value) => addition + value)
+
+      soma = listaCarrinho.reduce((addition, value) => addition + value)
 
       const total = `
       <button id="total" class="btn btn-danger mb-2 text-center">
-        Total R$ ${teste}
+        Total R$ ${soma}
       </button>`
 
-      carrinho.insertAdjacentHTML('beforeend', total)
+      totalDiv.innerHTML =  total
 
     });
   }
-
-  console.log(listaCarrinho)
 
 }
 
