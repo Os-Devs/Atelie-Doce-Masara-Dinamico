@@ -89,15 +89,12 @@ i {
   }
 }
 
-#offcanvasRightLabel {
+#offcanvasRightLabel, 
+#offcanvasLeftLabel, 
+#offcanvasBottomLabel {
   color: white;
 }
 
-#menu-do-offcanvas {
-  color: white;
-  font-weight: bold;
-  font-family: none;
-}
 
 .offcanvas-header {
   background-color: #99531D;
