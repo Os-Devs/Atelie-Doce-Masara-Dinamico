@@ -19,7 +19,7 @@ i {
 /* Barra de Navegação*/
 
 #header {
-    padding: 0
+  padding: 0;
 }
 
 .navbar {
@@ -89,15 +89,12 @@ i {
   }
 }
 
-#offcanvasRightLabel {
+#offcanvasRightLabel, 
+#offcanvasLeftLabel, 
+#offcanvasBottomLabel {
   color: white;
 }
 
-#menu-do-offcanvas {
-  color: white;
-  font-weight: bold;
-  font-family: none;
-}
 
 .offcanvas-header {
   background-color: #99531D;
@@ -312,4 +309,14 @@ div .contato {
 
 div.social {
   margin-top: 2rem;
+}
+
+i#iconSize1 {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+i#iconSize2 {
+  font-size: 20px;
+  margin-left: 10px;
 }
